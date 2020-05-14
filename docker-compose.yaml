@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  api:
+    image: my/pokemon-server-py
+    deploy:
+      restart_policy:
+        condition: on-failure
+    ports:
+      - target: 5000
+        published: 5000
+        protocol: tcp
+        # mode: host
